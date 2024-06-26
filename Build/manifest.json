@@ -1,9 +1,9 @@
 {
-    "name": "NotHenry",
-    "author": "NotRob",
-    "version_number": "0.0.0",
+    "name": "Buckaneer",
+    "author": "Kevin Smith",
+    "version_number": "0.1.0",
     "website_url": "",
-    "description": "I have not changed the manifest and now my mod will be deprecated",
+    "description": "Adds a pirate survivor to Risk of rain 2. With cannons and pirates thy search for the booty.",
     "dependencies": [
         "bbepis-BepInExPack-5.4.1905",
         "RiskofThunder-R2API_Core-5.0.3",
