@@ -1,12 +1,12 @@
 ﻿using RoR2;
 using UnityEngine;
-using HenryMod.Modules;
+using BuckaneerMod.Modules;
 using System;
 using RoR2.Projectile;
 
-namespace HenryMod.Survivors.Henry
+namespace BuckaneerMod.Survivors.Buckaneer
 {
-    public static class HenryAssets
+    public static class BuckaneerAssets
     {
         // particle effects
         public static GameObject swordSwingEffect;
@@ -27,7 +27,7 @@ namespace HenryMod.Survivors.Henry
 
             _assetBundle = assetBundle;
 
-            swordHitSoundEvent = Content.CreateAndAddNetworkSoundEventDef("HenrySwordHit");
+            swordHitSoundEvent = Content.CreateAndAddNetworkSoundEventDef("BuckaneerSwordHit");
 
             CreateEffects();
 
@@ -39,13 +39,13 @@ namespace HenryMod.Survivors.Henry
         {
             CreateBombExplosionEffect();
 
-            swordSwingEffect = _assetBundle.LoadEffect("HenrySwordSwingEffect", true);
-            swordHitImpactEffect = _assetBundle.LoadEffect("ImpactHenrySlash");
+            swordSwingEffect = _assetBundle.LoadEffect("BuckaneerSwordSwingEffect", true);
+            swordHitImpactEffect = _assetBundle.LoadEffect("ImpactBuckaneerSlash");
         }
 
         private static void CreateBombExplosionEffect()
         {
-            bombExplosionEffect = _assetBundle.LoadEffect("BombExplosionEffect", "HenryBombExplosion");
+            bombExplosionEffect = _assetBundle.LoadEffect("BombExplosionEffect", "BuckaneerBombExplosion");
 
             if (!bombExplosionEffect)
                 return;
@@ -76,7 +76,7 @@ namespace HenryMod.Survivors.Henry
         private static void CreateBombProjectile()
         {
             //highly recommend setting up projectiles in editor, but this is a quick and dirty way to prototype if you want
-            bombProjectilePrefab = Assets.CloneProjectilePrefab("CommandoGrenadeProjectile", "HenryBombProjectile");
+            bombProjectilePrefab = Assets.CloneProjectilePrefab("CommandoGrenadeProjectile", "BuckaneerBombProjectile");
 
             //remove their ProjectileImpactExplosion component and start from default values
             UnityEngine.Object.Destroy(bombProjectilePrefab.GetComponent<ProjectileImpactExplosion>());
@@ -88,14 +88,14 @@ namespace HenryMod.Survivors.Henry
             bombImpactExplosion.destroyOnEnemy = true;
             bombImpactExplosion.lifetime = 12f;
             bombImpactExplosion.impactEffect = bombExplosionEffect;
-            bombImpactExplosion.lifetimeExpiredSound = Content.CreateAndAddNetworkSoundEventDef("HenryBombExplosion");
+            bombImpactExplosion.lifetimeExpiredSound = Content.CreateAndAddNetworkSoundEventDef("BuckaneerBombExplosion");
             bombImpactExplosion.timerAfterImpact = true;
             bombImpactExplosion.lifetimeAfterImpact = 0.1f;
 
             ProjectileController bombController = bombProjectilePrefab.GetComponent<ProjectileController>();
 
-            if (_assetBundle.LoadAsset<GameObject>("HenryBombGhost") != null)
-                bombController.ghostPrefab = _assetBundle.CreateProjectileGhostPrefab("HenryBombGhost");
+            if (_assetBundle.LoadAsset<GameObject>("BuckaneerBombGhost") != null)
+                bombController.ghostPrefab = _assetBundle.CreateProjectileGhostPrefab("BuckaneerBombGhost");
             
             bombController.startSound = "";
         }

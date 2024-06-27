@@ -1,9 +1,9 @@
 ﻿using BepInEx.Configuration;
-using HenryMod.Modules;
+using BuckaneerMod.Modules;
 
-namespace HenryMod.Survivors.Henry
+namespace BuckaneerMod.Survivors.Buckaneer
 {
-    public static class HenryConfig
+    public static class BuckaneerConfig
     {
         public static ConfigEntry<bool> someConfigBool;
         public static ConfigEntry<float> someConfigFloat;
@@ -11,7 +11,7 @@ namespace HenryMod.Survivors.Henry
 
         public static void Init()
         {
-            string section = "Henry";
+            string section = "Buckaneer";
 
             someConfigBool = Config.BindAndOptions(
                 section,

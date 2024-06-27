@@ -1,8 +1,8 @@
-﻿using HenryMod.Survivors.Henry.SkillStates;
+﻿using BuckaneerMod.Survivors.Buckaneer.SkillStates;
 
-namespace HenryMod.Survivors.Henry
+namespace BuckaneerMod.Survivors.Buckaneer
 {
-    public static class HenryStates
+    public static class BuckaneerStates
     {
         public static void Init()
         {

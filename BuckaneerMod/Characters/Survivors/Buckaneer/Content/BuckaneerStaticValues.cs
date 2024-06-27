@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace HenryMod.Survivors.Henry
+namespace BuckaneerMod.Survivors.Buckaneer
 {
-    public static class HenryStaticValues
+    public static class BuckaneerStaticValues
     {
         public const float swordDamageCoefficient = 2.8f;
 
